@@ -1,4 +1,4 @@
-package springboot_crud.springboot_crud.model;
+package springboot_crud.model;
 
 import java.io.Serializable;
 
