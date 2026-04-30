@@ -35,6 +35,54 @@
 	<button type="button" class="btn btn-primary" onclick="salvarUsuario()">Salvar</button>
 	<button type="button" class="btn btn-secondary"
 		onclick="document.getElementById('formCadastroUser').reset()">Novo</button>
+	<button type="button" class="btn btn-danger" data-bs-toggle="modal"
+		data-bs-target="#modalPesquisaUser">Pesquisar</button>
+	<button type="button" class="btn btn-warning"
+		onclick="deletarUsuarioTelaPrincipal()">Deletar</button>
+
+
+	<div class="modal fade" id="modalPesquisaUser" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Pesquisa de
+						Usuário</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="mb-3">
+							<label for="nameBusca" class="col-form-label">Informe o
+								Nome:</label> <input type="text" class="form-control" id="nameBusca">
+						</div>
+						<button type="button" class="btn btn-success"
+							onclick="pesquisarUser()">Buscar</button>
+					</form>
+
+					<table class="table" id="tabelaresultados">
+						<thead>
+							<tr>
+								<th scope="col">ID</th>
+								<th scope="col">Nome</th>
+								<th scope="col">Editar</th>
+								<th scope="col">Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+
+						</tbody>
+					</table>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- Option 1: Bootstrap Bundle with Popper -->
 	<script
@@ -42,9 +90,8 @@
 		integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
 		crossorigin="anonymous"></script>
 
-	<script src="https://code.jquery.com/jquery-4.0.0.min.js"
-		integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
-		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 	<script src="script.js"></script>
 

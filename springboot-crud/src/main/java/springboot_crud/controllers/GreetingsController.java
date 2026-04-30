@@ -47,7 +47,7 @@ public class GreetingsController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(user);
 	}
 
-	@DeleteMapping("delete")
+	@DeleteMapping("delete/{id}")
 	public ResponseEntity<String> deletar(@PathVariable Long id) {
 		if (!usuarioRepository.existsById(id)) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário não encontrado!");
@@ -57,7 +57,7 @@ public class GreetingsController {
 		return ResponseEntity.ok("Usuário deletado com sucesso!");
 	}
 
-	@GetMapping("buscarPorID")
+	@GetMapping("buscarPorID/{id}")
 	public ResponseEntity<Usuario> buscarPorID(@PathVariable Long id) {
 		Optional<Usuario> usuario = usuarioRepository.findById(id);
 
